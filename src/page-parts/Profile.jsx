@@ -1,6 +1,6 @@
 import image from '../images/gradient-hexagonal-background_79603-1629.avif'
 
-const Content = () => {
+const Profile = () => {
     return (
       <div className='content'>
         <div className="main-img">
@@ -10,4 +10,4 @@ const Content = () => {
     );
   }
 
-export default Content
+export default Profile
