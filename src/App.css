@@ -12,29 +12,8 @@
   min-height: 100vh;
 }
 
-.header {
-  grid-area: header;
-  padding: 10px;
-  text-align: center;
-}
-
-.nav {
-  grid-area: nav;
-  padding: 10px;
-}
-
 .content {
   grid-area: content;
-}
-
-.footer {
-  grid-area: footer;
-  background: #000;
-  padding: 10px;
-}
-
-.footer .logo img {
-  filter: invert(100%);
 }
 
 ul {

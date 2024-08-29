@@ -1,4 +1,4 @@
-import image from '../images/gradient-hexagonal-background_79603-1629.avif'
+import image from '../../images/gradient-hexagonal-background_79603-1629.avif'
 
 const Profile = () => {
     return (

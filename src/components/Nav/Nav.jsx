@@ -1,6 +1,8 @@
+import styles from './Nav.module.css'
+
 const Nav = () => {
     return (
-      <nav className="nav">
+      <nav className={styles.nav}>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="#contacts">Contacts</a></li>
