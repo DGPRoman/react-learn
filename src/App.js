@@ -1,4 +1,5 @@
 import './App.css';
+import Dialogs from './components/Dialogs/Dialogs';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
@@ -8,8 +9,13 @@ const App = () => {
   return (
     <div className="page-wrapper">
       <Header />
-      <Nav />
-      <Profile />
+      <main className='main'>
+        <Nav />
+        <div className='page-container'>
+          <Profile />
+          <Dialogs/>
+        </div>
+      </main>
       <Footer />
     </div>
   );

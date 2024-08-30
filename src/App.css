@@ -2,18 +2,32 @@
   display: grid;
   grid-template-areas: 
   "header header"
-  "nav content"
+  "main main"
   "footer footer";
   grid-template-columns: 1fr 3fr; 
   grid-template-rows: auto 1fr auto;
   grid-gap: 10px;
-  max-width: 1600px;
   margin: 0 auto;
   min-height: 100vh;
+  padding: 0 10px;
 }
 
-.content {
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-area: main;
+  display: grid;
+  grid-template-areas: 
+  "nav content";
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+}
+
+.page-container {
   grid-area: content;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 ul {
@@ -34,9 +48,4 @@ ul li {
 
 .logo a img {
   max-width: 100%;
-}
-
-.main-img img {
-  max-width: 100%;
-  width: 100%;
 }
