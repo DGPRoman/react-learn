@@ -1,10 +1,10 @@
 .page-wrapper {
   display: grid;
-  grid-template-areas: 
-  "header header"
-  "main main"
-  "footer footer";
-  grid-template-columns: 1fr 3fr; 
+  grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: auto 1fr auto;
   grid-gap: 10px;
   margin: 0 auto;
@@ -13,12 +13,13 @@
 }
 
 .main {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   grid-area: main;
   display: grid;
-  grid-template-areas: 
-  "nav content";
+  grid-template-areas:
+    "nav content";
   grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
 }
@@ -48,4 +49,8 @@ ul li {
 
 .logo a img {
   max-width: 100%;
+}
+
+a.active {
+  font-weight: bold;
 }

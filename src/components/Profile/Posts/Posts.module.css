@@ -3,3 +3,7 @@
     flex-direction: column;
     padding: 10px;
 }
+
+.new_post {
+    margin-bottom: 20px;
+}

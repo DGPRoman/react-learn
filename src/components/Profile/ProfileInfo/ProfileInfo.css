@@ -1,0 +1,9 @@
+.main_bg_img {
+    overflow: hidden;
+    max-height: 100px;
+}
+
+.main_bg_img img {
+    max-width: 100%;
+    width: 100%;
+}

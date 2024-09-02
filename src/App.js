@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import Footer from './components/Footer/Footer';
@@ -7,17 +8,21 @@ import Profile from './components/Profile/Profile';
 
 const App = () => {
   return (
-    <div className="page-wrapper">
-      <Header />
-      <main className='main'>
-        <Nav />
-        <div className='page-container'>
-          <Profile />
-          <Dialogs/>
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="page-wrapper">
+        <Header />
+        <main className='main'>
+          <Nav />
+          <div className='page-container'>
+            <Routes>
+              <Route path="profile" element={<Profile />} />
+              <Route path="dialogs" element={<Dialogs />} />
+            </Routes>            
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
