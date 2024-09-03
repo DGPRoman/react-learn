@@ -6,7 +6,8 @@ import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import Profile from './components/Profile/Profile';
 
-const App = () => {
+const App = (props) => {
+  
   return (
     <BrowserRouter>
       <div className="page-wrapper">
@@ -15,7 +16,7 @@ const App = () => {
           <Nav />
           <div className='page-container'>
             <Routes>
-              <Route path="profile" element={<Profile />} />
+              <Route path="profile" element={<Profile posts={props.posts}/>} />
               <Route path="dialogs" element={<Dialogs />} />
             </Routes>            
           </div>

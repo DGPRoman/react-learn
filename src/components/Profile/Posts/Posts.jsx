@@ -1,13 +1,9 @@
 import styles from './Posts.module.css'
 import Post from './Post/Post';
 
-const Posts = () => {
-  let postsData = [
-    {id: 1, content: 'Post text 1', likesCount: 12},
-    {id: 2, content: 'Post ds text 2', likesCount: 111}
-  ];
-
-  let posts = postsData.map(post => <Post content={post.content} />)
+const Posts = (props) => {
+  
+  let posts = props.posts.map(post => <Post content={post.content} likesCount={post.likesCount }/>)
     return (
       <div className={styles.posts}>
         <h3>New post</h3>

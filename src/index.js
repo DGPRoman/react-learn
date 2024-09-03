@@ -5,9 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+let postsData = [
+  {id: 1, content: 'Post text 1', likesCount: 12},
+  {id: 2, content: 'Post ds text 2', likesCount: 111}
+];
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App posts={postsData}/>
   </React.StrictMode>
 );
 
