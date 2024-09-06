@@ -3,23 +3,10 @@ import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
 
 
-const Dialogs = () => {
-    let dialogsData = [
-        {id: 1, name: 'Roman'},
-        {id: 2, name: 'Yurii'},
-        {id: 1, name: 'Olga'},
-        {id: 1, name: 'USer 22'},
-    ];
+const Dialogs = (props) => {
+    let dialogElements = props.state.dialogs.map((dialog) => <Dialog key={dialog.id} id={dialog.id} name={dialog.name} />);
+    let messages = props.state.messages.map(message => <Message key={message.id} message={message.message} />)
 
-    let dialogElements = dialogsData.map(dialog => <Dialog id={dialog.id} name={dialog.name} />);
-
-    let messagesData = [
-        {id: 1, message: 'Hi'},
-        {id: 2, message: 'MEssage'},
-        {id: 3, message: 'lorem dsfdsf'},
-    ];
-
-    let messages = messagesData.map(message => <Message message={message.message} />)
     return (
         <div className={styles.wrapper}>
             <div className={styles.left}>

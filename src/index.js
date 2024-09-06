@@ -3,17 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from './redux/state';
+import { addPost } from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let postsData = [
-  {id: 1, content: 'Post text 1', likesCount: 12},
-  {id: 2, content: 'Post ds text 2', likesCount: 111}
-];
-
 root.render(
   <React.StrictMode>
-    <App posts={postsData}/>
+    <App state={state} addPost={addPost} />
   </React.StrictMode>
 );
 
