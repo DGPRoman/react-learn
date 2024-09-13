@@ -1,5 +1,6 @@
 import {Routes, Route } from 'react-router-dom';
 import './App.css';
+// import DialogsContainer from './components/Dialogs/DialogsContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -11,11 +12,12 @@ const App = (props) => {
       <div className="page-wrapper">
         <Header />
         <main className='main'>
-          <Sidebar state={props.state.sidebar} />
+          <Sidebar />
           <div className='page-container'>
             <Routes>
               <Route path="profile" element={<Profile store={props.store} />} />
-              <Route path="dialogs" element={<DialogsContainer store={props.store} />} />
+              <Route path="dialogs" element={<DialogsContainer />} />
+              <Route path="users" element={<div>users</div> } />
             </Routes>
           </div>
         </main>

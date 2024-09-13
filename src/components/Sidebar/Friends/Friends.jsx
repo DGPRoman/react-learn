@@ -3,7 +3,7 @@ import './Friends.css'
 
 
 const Friends = (props) => {
-    let friendElements = props.state.map((friend) => <Friend state={friend} key={friend.id} />);
+    let friendElements = props.friendsData.map((friend) => <Friend state={friend} key={friend.id} />);
 
     return (
         <div className="friends-wrapper">
