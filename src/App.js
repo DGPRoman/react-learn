@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   return (
@@ -15,9 +16,9 @@ const App = (props) => {
           <Sidebar />
           <div className='page-container'>
             <Routes>
-              <Route path="profile" element={<Profile store={props.store} />} />
+              <Route path="profile" element={<Profile />} />
               <Route path="dialogs" element={<DialogsContainer />} />
-              <Route path="users" element={<div>users</div> } />
+              <Route path="users" element={<UsersContainer />} />
             </Routes>
           </div>
         </main>
