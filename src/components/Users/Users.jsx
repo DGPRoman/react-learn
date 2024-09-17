@@ -1,22 +1,36 @@
+import userDefaultImg from './../../images/default-profile-s.png';
+
 let Users = (props) => {
-    if (props.users.length===0) {
-        props.setUsers(
-            [
-                { id: 1, photoUrl: '', followed: false, fullname: 'Roman', status: 'Hello!', location: { city: 'Lviv', country: 'Ukraine' } },
-                { id: 2, photoUrl: '', followed: true, fullname: 'Yurii', status: '', location: { city: 'Lviv', country: 'Ukraine' } },
-                { id: 3, photoUrl: '', followed: false, fullname: 'Olga', status: 'Hello!', location: { city: 'Lviv', country: 'Ukraine' } },
-                { id: 4, photoUrl: '', followed: false, fullname: 'Oksana', status: 'Hi!', location: { city: 'Kyiv', country: 'Ukraine' } },
-                { id: 5, photoUrl: '', followed: true, fullname: 'Dima', status: 'Hello!', location: { city: 'Lviv', country: 'Ukraine' } }
-            ]
-        )
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
+
+
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i);
     }
+
+    // todo remove
+    pages = pages.slice(0, 5);
+
     return (
-        <div>sd
+        <div>
+            <div className="pagination">
+                <ul>
+                    {pages.map(p => {
+                        return (
+                            <li key={`page${p}`} className={props.currentPage === p ? 'active' : ''}
+                                onClick={(e) => { props.onPageChanged(p); }}>
+                                <span>{p}</span>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
             {props.users.map(u => {
                 return (
                     <div key={u.id}>
                         <span>
-                            <div><img src={u.photoUrl} alt="user photo" /></div>
+                            <div><img src={u.photos.small != null ? u.photos.small : userDefaultImg} alt="user" /></div>
                             <div>
                                 {u.followed
                                     ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
@@ -25,17 +39,16 @@ let Users = (props) => {
                         </span>
                         <span>
                             <span>
-                                <div>{u.fullname}</div>
+                                <div>{u.name}</div>
                                 <div>{u.status}</div>
                             </span>
                             <span>
-                                <div>{u.location.city}</div>
-                                <div>{u.location.country}</div>
+                                {/* <div>{u.location.city}</div> */}
+                                {/* <div>{u.location.country}</div> */}
                             </span>
                         </span>
                     </div>
                 )
-
             })}
         </div>
     )
