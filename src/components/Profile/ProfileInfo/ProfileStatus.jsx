@@ -22,7 +22,7 @@ class ProfileStatus extends React.Component {
             <div className="profile-status-wrapper">
                 {this.state.editMode &&
                     <div className="input-status-wrapper">
-                        <input  autoFocus={true} type="text" name="status" value={this.props.status} onBlur={this.deactivetaEditMode} />
+                        <input autoFocus={true} type="text" name="status" value={this.props.status} onBlur={this.deactivetaEditMode} />
                     </div>
                 }
                 {!this.state.editMode &&
