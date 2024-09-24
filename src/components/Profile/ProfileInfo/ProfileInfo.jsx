@@ -1,18 +1,18 @@
-import image from '../../../images/gradient-hexagonal-background_79603-1629.avif';
 import userDefaultImg from '../../../images/default-profile-s.png';
 import './ProfileInfo.css'
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
-    return (
-      <div>
-        <div className='main_bg_img'>
-          <img src={image} alt="preview" />
+  return (
+    <div>
+      <div className='profile-description'>
+        <div className="profile-photo">
+          <img src={props.profile.photos.large != null ? props.profile.photos.large : userDefaultImg} alt="" />
         </div>
-        <div>ava + desc
-          <img src={props.profile.photos.large != null ? props.profile.photos.large : userDefaultImg } alt="" />
-        </div>
+        <ProfileStatus status="Hello!" />
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-export default ProfileInfo
+export default ProfileInfo;

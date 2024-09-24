@@ -19,7 +19,7 @@ const Dialogs = (props) => {
 
         props.updateNewMessageBody(body);
     }
-
+    // if (props.isAuth === false) return <Navigate to="/login" />
     return (
         <div className={styles.wrapper}>
             <div className={styles.left}>

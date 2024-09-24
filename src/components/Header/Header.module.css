@@ -1,6 +1,8 @@
 .header {
-    grid-area: header;
-    padding: 10px;
-    text-align: center;
-    margin: 0 -10px;
-  }
+  display: flex;
+  justify-content: space-between;
+  grid-area: header;
+  padding: 10px;
+  text-align: center;
+  margin: 0 -10px;
+}
