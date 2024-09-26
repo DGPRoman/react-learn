@@ -1,5 +1,6 @@
 import axios from "axios";
 import api_config from "../api";
+// import { updateStatus } from "../redux/profile-reducer";
 
 const { API_URL, API_KEY } = api_config;
 
@@ -25,12 +26,22 @@ export const usersApi = {
 
     unfollow(userId) {
         return instance.delete(`follow/${userId}`, {});
-    },
-
-    getProfile(userId) {
-        return instance.get(`profile/${userId}`);
     }
 };
+
+export const profileApi = {
+    getProfile(userId) {
+        return instance.get(`profile/${userId}`);
+    },
+
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`);
+    },
+
+    updateStatus(status) {
+        return instance.put(`profile/status/`, {status: status});
+    }
+}
 
 export const authAPI = {
     async me() {
