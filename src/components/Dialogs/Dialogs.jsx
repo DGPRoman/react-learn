@@ -1,6 +1,7 @@
 import styles from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
+import AddMessageFormRedux from './Message/AddMessageForm';
 
 
 const Dialogs = (props) => {
@@ -8,18 +9,12 @@ const Dialogs = (props) => {
 
     let dialogElements = state.dialogs.map((dialog) => <Dialog key={dialog.id} id={dialog.id} name={dialog.name} />);
     let messages = state.messages.map(message => <Message key={message.id} message={message.message} />)
-    let newMessageBody = state.newMessageBody;
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
+   
+    let addNewMessage = (values) => {
+        console.log(values);
+        props.sendMessage(values.newMessageBody);
     }
-
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-
-        props.updateNewMessageBody(body);
-    }
-    // if (props.isAuth === false) return <Navigate to="/login" />
+    
     return (
         <div className={styles.wrapper}>
             <div className={styles.left}>
@@ -32,16 +27,7 @@ const Dialogs = (props) => {
                 <div className={styles.messages}>
                     {messages}
                 </div>
-                <div>
-                    <div>
-                        <textarea value={newMessageBody}
-                            onChange={onNewMessageChange}
-                            placeholder='Enter your message'></textarea>
-                    </div>
-                    <div>
-                        <button onClick={onSendMessageClick}>Send</button>
-                    </div>
-                </div>
+                <AddMessageFormRedux onSubmit={addNewMessage} />
             </div>
         </div>
     );
