@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import userDefaultImg from '../../images/default-profile-s.png';
+import './users.css';
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);

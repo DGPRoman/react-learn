@@ -6,3 +6,12 @@
 .form-control.error span {
     color: red;
 }
+
+.form-global-error {
+    display: inline-block;
+    border: 1px solid red;
+    padding: 5px 15px;
+    color: red;
+    border-radius: 10px;
+    vertical-align: middle;
+}
