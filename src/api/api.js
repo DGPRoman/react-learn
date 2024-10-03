@@ -1,6 +1,5 @@
 import axios from "axios";
 import api_config from "../api";
-// import { updateStatus } from "../redux/profile-reducer";
 
 const { API_URL, API_KEY } = api_config;
 

@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProfileStatusWithHooks = (props) => {
     let [editMode, setEditMode] = useState(false);
     let [status, setStatus] = useState(props.status);
 
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status]);
+
     const activateMode = () => {
         setEditMode(true);
-    }
+    };
 
     const deactivateEditMode = () => {
         setEditMode(false);
@@ -16,7 +20,6 @@ const ProfileStatusWithHooks = (props) => {
     const onStatusChange = (e) => {
         setStatus(e.currentTarget.value);
     };
-
 
     return (
         <div className="profile-status-wrapper">
