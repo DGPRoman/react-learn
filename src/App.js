@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Footer from './components/Footer/Footer';
@@ -8,10 +8,11 @@ import Sidebar from './components/Sidebar/Sidebar';
 import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/Header/HeaderContiner';
 import Login from './components/Login/Login';
-import {initializeApp} from './redux/app-reducer';
-import { connect } from 'react-redux';
+import { initializeApp } from './redux/app-reducer';
+import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './components/common/Preloader/Preloader';
+import store from './redux/redux-store'
 
 class App extends React.Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends React.Component {
 
   render() {
     if (!this.props.initialized) {
-      return <Preloader/>
+      return <Preloader />
     }
 
     return (
@@ -47,6 +48,16 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 });
 
-export default compose(
+let AppContainer = compose(
   connect(mapStateToProps, { initializeApp })
 )(App);
+
+const RopelApp = () => {
+  return <BrowserRouter>
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  </BrowserRouter>
+}
+
+export default RopelApp;
