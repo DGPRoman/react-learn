@@ -2,9 +2,9 @@ import { Field, reduxForm } from "redux-form";
 import { Input } from "../common/FormControls/FormControls";
 import { requiredField } from "../../utils/validators/validators";
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field name={"email"} placeholder={"email"} component={Input}
                     validate={[requiredField]}
@@ -20,7 +20,7 @@ const LoginForm = (props) => {
                 Remember me
             </div>
             <div className="errors-wrapper">
-                {props.error && <div className="form-global-error">{props.error}</div>}
+                {error && <div className="form-global-error">{error}</div>}
             </div>
             <div>
                 <button>Login</button>

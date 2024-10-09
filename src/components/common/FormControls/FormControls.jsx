@@ -1,13 +1,13 @@
 import './form_control.css';
 
-export const FormControl = ({ input, meta, ...props }) => {
-    const hasError = meta.touched && meta.error;
+export const FormControl = ({ input, meta: {touched, error}, children }) => {
+    const hasError = touched && error;
     return (
         <div className={'form-control ' + (hasError ? 'error' : '')}>
             <div>
-                { props.children }
+                { children }
             </div>
-            {hasError && <span>{meta.error}</span>}
+            {hasError && <span>{error}</span>}
         </div>
     )
 }
